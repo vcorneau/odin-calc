@@ -1,0 +1,14 @@
+.numberPad {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    padding: 5px;
+    text-align: center;
+}
