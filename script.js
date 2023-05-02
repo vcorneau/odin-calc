@@ -22,6 +22,8 @@ let firstNumber;
 let secondNumber;
 let operator;
 
+//Function to calculate based on input
+
 function operate(operator,firstNumber,secondNumber) {
     let a = parseInt(firstNumber);
     let b = parseInt(secondNumber);

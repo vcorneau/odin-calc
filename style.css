@@ -1,8 +1,16 @@
-.numberPad {
+
+.calculator {
     display: flex;
     flex-direction: column;
 }
 
+.display {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.numberPad {
+    font-family: 'Pacifico', cursive;
+}
 .row {
     display: flex;
     flex-direction: row;
