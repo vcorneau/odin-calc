@@ -38,3 +38,7 @@ function operate(operator,firstNumber,secondNumber) {
         return div(a,b);
     }
 }
+
+//Change color on click
+
+
