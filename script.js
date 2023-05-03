@@ -39,6 +39,22 @@ function operate(operator,firstNumber,secondNumber) {
     }
 }
 
-//Change color on click
+//On click, change buttons to show they're clicked
+const buttons = document.getElementsByClassName('button');
+
+
+
+//On operator click (but not equal), button stays a slightly lighter shade until next button is clicked
+
+//Display number to be added in display
+
+//Store first number into variable when operator is pressed and clear display.
+//First number will be stored in an array, concat the array, then parseInt
+
+//Store second number when operator is pressed and clear display
+//
+
+//Display result when = is pressed
+
 
 
