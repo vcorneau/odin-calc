@@ -44,6 +44,8 @@ function operate(operator,firstNumber,secondNumber) {
 let newInputBuffer = [];
 let calcBuffer = [];
 let operatorBuffer = [];
+let display = document.getElementById('display');
+let currentDisplay;
 
 let buttons = document.getElementsByClassName("button");
 
