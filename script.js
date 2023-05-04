@@ -39,12 +39,22 @@ function operate(operator,firstNumber,secondNumber) {
     }
 }
 
-//On click, change buttons to show they're clicked
-const buttons = document.getElementsByClassName('button');
+//On button click, add numbers to buffer
+
+let newInputBuffer = [];
+let calcBuffer = [];
+let operatorBuffer = [];
+
+let buttonClicked = false;
+let buttons = document.getElementsByClassName("button");
+
+for (let button of buttons) {
+    button.addEventListener("click", (event) => {
+        console.log("button");
+    });
+}
 
 
-
-//On operator click (but not equal), button stays a slightly lighter shade until next button is clicked
 
 //Display number to be added in display
 
