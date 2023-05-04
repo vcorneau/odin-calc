@@ -49,6 +49,11 @@
     background-color: #D9DBF1;
 }
 
+.button:active {
+    background-color: #DBF4A7;
+    font-weight: bolder;
+}
+
 .fakeButton {
     background-color: #DBF4A7;
 }
