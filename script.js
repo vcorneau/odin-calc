@@ -45,13 +45,47 @@ let newInputBuffer = [];
 let calcBuffer = [];
 let operatorBuffer = [];
 
-let buttonClicked = false;
 let buttons = document.getElementsByClassName("button");
 
+function receiveUserInput() {
+    if (event.target.id === "button1") {
+        newInputBuffer.push(1);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button2") {
+        newInputBuffer.push(2);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button3") {
+        newInputBuffer.push(3);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button4") {
+        newInputBuffer.push(4);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button5") {
+        newInputBuffer.push(5);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button6") {
+        newInputBuffer.push(6);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button7") {
+        newInputBuffer.push(7);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button8") {
+        newInputBuffer.push(8);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button9") {
+        newInputBuffer.push(9);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "button0") {
+        newInputBuffer.push(0);
+        console.log(newInputBuffer);
+    } else if (event.target.id === "buttonDec") {
+        newInputBuffer.push(".");
+        console.log(newInputBuffer);
+    }
+}
+
 for (let button of buttons) {
-    button.addEventListener("click", (event) => {
-        console.log(event.target.id);
-    });
+    button.addEventListener("click", receiveUserInput);
 }
 
 
