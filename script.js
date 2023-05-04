@@ -47,45 +47,68 @@ let operatorBuffer = [];
 
 let buttons = document.getElementsByClassName("button");
 
-function receiveUserInput() {
+function receiveFirstUserInput() {
     if (event.target.id === "button1") {
         newInputBuffer.push(1);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
+        return firstNumber
     } else if (event.target.id === "button2") {
         newInputBuffer.push(2);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button3") {
         newInputBuffer.push(3);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button4") {
         newInputBuffer.push(4);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button5") {
         newInputBuffer.push(5);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button6") {
         newInputBuffer.push(6);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button7") {
         newInputBuffer.push(7);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button8") {
         newInputBuffer.push(8);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button9") {
         newInputBuffer.push(9);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "button0") {
         newInputBuffer.push(0);
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     } else if (event.target.id === "buttonDec") {
         newInputBuffer.push(".");
-        console.log(newInputBuffer);
+        calcBuffer = newInputBuffer.join('');
+        firstNumber = parseFloat(calcBuffer);
+        console.log(firstNumber);
     }
 }
 
 for (let button of buttons) {
-    button.addEventListener("click", receiveUserInput);
+    button.addEventListener("click", receiveFirstUserInput);
 }
 
 
