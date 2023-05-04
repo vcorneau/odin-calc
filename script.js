@@ -50,7 +50,7 @@ let buttons = document.getElementsByClassName("button");
 
 for (let button of buttons) {
     button.addEventListener("click", (event) => {
-        console.log("button");
+        console.log(event.srcElement.id);
     });
 }
 
