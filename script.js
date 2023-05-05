@@ -45,17 +45,18 @@ let newInputBuffer = [];
 let calcBuffer = [];
 let operatorBuffer = [];
 let display = document.getElementById('display');
+let clearButton = document.getElementById('buttonClear');
 let currentDisplay;
 
 let buttons = document.getElementsByClassName("button");
 
-function receiveFirstUserInput() {
+//Receives user input and puts numbers and decimal in a buffer
+function receiveFirstUserInput(event) {
     if (event.target.id === "button1") {
         newInputBuffer.push(1);
         calcBuffer = newInputBuffer.join('');
         firstNumber = parseFloat(calcBuffer);
         console.log(firstNumber);
-        return firstNumber
     } else if (event.target.id === "button2") {
         newInputBuffer.push(2);
         calcBuffer = newInputBuffer.join('');
@@ -102,20 +103,35 @@ function receiveFirstUserInput() {
         firstNumber = parseFloat(calcBuffer);
         console.log(firstNumber);
     } else if (event.target.id === "buttonDec") {
+        if(newInputBuffer.includes(".")){
+            return;
+        }
         newInputBuffer.push(".");
         calcBuffer = newInputBuffer.join('');
         firstNumber = parseFloat(calcBuffer);
         console.log(firstNumber);
     }
+    display.innerHTML = firstNumber;
+}
+
+function resetData() {
+    newInputBuffer = [];
+    calcBuffer = [];
+    operatorBuffer = [];
+    firstNumber = null;
+    display.innerHTML = ""; 
+
 }
 
 for (let button of buttons) {
     button.addEventListener("click", receiveFirstUserInput);
 }
 
-
+buttonClear.addEventListener("click", resetData);
 
 //Display number to be added in display
+
+
 
 //Store first number into variable when operator is pressed and clear display.
 //First number will be stored in an array, concat the array, then parseInt
