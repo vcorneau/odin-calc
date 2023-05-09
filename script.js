@@ -1,30 +1,31 @@
+let leftNumber
+let rightNumber
+let operator
+
 // add function
-function add (a, b) {
-  return a + b
+function add (leftNumber, rightNumber) {
+  return leftNumber + rightNumber
 }
 
 // subtract function
-function sub (a, b) {
-  return a - b
+function sub (leftNumber, rightNumber) {
+  return leftNumber - rightNumber
 }
 
 // multiply function
-function mult (a, b) {
-  return a * b
+function mult (leftNumber, rightNumber) {
+  return leftNumber * rightNumber
 }
 
 // divide function
-function div (a, b) {
-  return a / b
+function div (leftNumber, rightNumber) {
+  return leftNumber / rightNumber
 }
 
-let firstNumber
-let secondNumber
-let operator
 
 // Function to calculate based on input
 
-function operate (operator, firstNumber, secondNumber) {
+/* function operate (operator, firstNumber, secondNumber) {
   let a = parseInt(firstNumber)
   let b = parseInt(secondNumber)
 
@@ -50,8 +51,10 @@ let currentDisplay
 
 let buttons = document.getElementsByClassName('button')
 
-// Receives user input and puts numbers and decimal in a buffer
-function receiveFirstUserInput (event) {
+switch 
+
+// OLD FUNCTION -- Delete once new one is working. Receives user input and puts numbers and decimal in a buffer
+/* function receiveFirstUserInput (event) {
   if (event.target.id === 'button1') {
     newInputBuffer.push(1)
     calcBuffer = newInputBuffer.join('')
@@ -113,7 +116,9 @@ function receiveFirstUserInput (event) {
   }
 display.innerHTML = firstNumber
 }
+*/
 
+// Function resets data
 function resetData () {
   newInputBuffer = []
   calcBuffer = []
