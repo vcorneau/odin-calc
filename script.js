@@ -16,34 +16,39 @@ const newInputBuffer = []
 }
 
 const buttons = document.getElementsByClassName('button')
-let buttonClass = []
+let buttonClass
 let newInputBuffer = []
 let numberBuffer = []
 let number
+let operator
+
+function resetData() {
+  newInputBuffer = []
+  numberBuffer = []
+  number = null
+  operator = null
+  display.innerHTML = ''
+}
 
 
 for (const button of buttons) {
   button.addEventListener('click', function() {
     buttonClass = button.classList
-    console.log(buttonClass)
+
+    switch (true) {
+      case buttonClass.contains('number'):
+        newInputBuffer.push(button.innerHTML)
+        numberBuffer = newInputBuffer.join('')
+        number = parseFloat(numberBuffer)
+        display.innerHTML = number
+        break
+      case buttonClass.contains('operator'):
+        operator = button.innerHTML
+        console.log(operator)
+        break
+      case buttonClass.contains('clear'):
+        resetData()
+        break
+    }
   })
 }
-
-switch (true) {
-  case buttonClass.contains('number'):
-    newInputBuffer.push(button.innerHTML)
-    numberBuffer = newInputBuffer.join('')
-    number = parseFloat(numberBuffer)
-    console.log(number)
-    break
-  case buttonClass.contains('operator'):
-    operator = button.innerHTML
-    console.log(operator)
-    break
-  case buttonClass.contains('clear'):
-    resetData
-    console.log(number)
-    break
-}
-
-
