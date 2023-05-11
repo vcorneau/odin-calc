@@ -15,12 +15,26 @@ const buttons = document.getElementsByClassName('button')
 const newInputBuffer = []
 }
 
+function operate(operator) {
+  if(operator === '+') {
+    display.innerHTML = add()
+  } else if(operator === '-') {
+    display.innerHTML = sub()
+  } else if(operator === '*') {
+    display.innerHTML = mult();
+  } else if(operator === '/' && rightNumber !== 0) {
+    display.innerHTML = div();
+  } else if(operator === '/' && rightNumber === 0) {
+    display.innerHTML = '80085';
+  }
+}
+
 const buttons = document.getElementsByClassName('button')
 let buttonClass
 let newInputBuffer = []
 let numberBuffer = []
-let leftNumber
-let rightNumber
+let leftNumber = 0
+let rightNumber = 0
 let number
 let operator
 const display = document.getElementById('display')
@@ -53,7 +67,12 @@ for (const button of buttons) {
     } else if (buttonClass.contains('operator')) {
       operator = button.innerHTML
       leftNumber = number
+      console.log(leftNumber)
       resetData()
+    } else if (buttonClass.contains('equal')) {
+      rightNumber = number
+      console.log(rightNumber)
+      operate()
     } else if (buttonClass.contains('clear')) {
       resetData()
     }
