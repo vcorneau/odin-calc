@@ -15,9 +15,11 @@ const buttons = document.getElementsByClassName('button')
 const newInputBuffer = []
 }
 
-function operate(operator) {
+function operate() {
+  let math
   if(operator === '+') {
-    display.innerHTML = add()
+    console.log(add(leftNumber, rightNumber))
+    return math
   } else if(operator === '-') {
     display.innerHTML = sub()
   } else if(operator === '*') {
@@ -33,8 +35,8 @@ const buttons = document.getElementsByClassName('button')
 let buttonClass
 let newInputBuffer = []
 let numberBuffer = []
-let leftNumber = 0
-let rightNumber = 0
+let leftNumber
+let rightNumber
 let number
 let operator
 const display = document.getElementById('display')
@@ -68,11 +70,12 @@ for (const button of buttons) {
       operator = button.innerHTML
       leftNumber = number
       console.log(leftNumber)
+      console.log(operator)
       resetData()
-    } else if (buttonClass.contains('equal')) {
+    } else if (buttonClass.contains('equal') && rightNumber == null) {
       rightNumber = number
       console.log(rightNumber)
-      operate()
+      operate(operator, leftNumber, rightNumber)
     } else if (buttonClass.contains('clear')) {
       resetData()
     }
