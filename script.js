@@ -1,6 +1,8 @@
 // Operation functions
 function add(leftNumber, rightNumber) {
-  return leftNumber + rightNumber
+  let result = leftNumber + rightNumber
+  result.parseFloat
+  return result
 }
 function sub(leftNumber, rightNumber) {
   return leftNumber - rightNumber;
@@ -10,24 +12,25 @@ function mult(leftNumber, rightNumber) {
 }
 function div(leftNumber, rightNumber) {
   return leftNumber / rightNumber;
-
-const buttons = document.getElementsByClassName('button')
-const newInputBuffer = []
 }
 
-function operate() {
-  let math
+function operate(operator, leftNumber, rightNumber) {
+  let result
   if(operator === '+') {
-    console.log(add(leftNumber, rightNumber))
-    return math
+    result = add(leftNumber, rightNumber)
+    return result
   } else if(operator === '-') {
-    display.innerHTML = sub()
+    result = sub(leftNumber, rightNumber)
+    return result
   } else if(operator === '*') {
-    display.innerHTML = mult();
+    result = mult(leftNumber, rightNumber)
+    return result
   } else if(operator === '/' && rightNumber !== 0) {
-    display.innerHTML = div();
+    result = mult(leftNumber, rightNumber)
+    return result
   } else if(operator === '/' && rightNumber === 0) {
-    display.innerHTML = '80085';
+    let divideByZero = '80085'
+    return dividebyZero;
   }
 }
 
@@ -46,9 +49,12 @@ function resetData() {
   newInputBuffer = []
   numberBuffer = []
   number = null
-  operator = null
   decimalUsed = false
   display.innerHTML = ''
+}
+
+function resetOperator() {
+  operator = null
 }
 
 for (const button of buttons) {
@@ -75,9 +81,12 @@ for (const button of buttons) {
     } else if (buttonClass.contains('equal') && rightNumber == null) {
       rightNumber = number
       console.log(rightNumber)
-      operate(operator, leftNumber, rightNumber)
+      equals = operate(operator, leftNumber, rightNumber)
+      console.log(equals)
+      display.innerHTML = equals
     } else if (buttonClass.contains('clear')) {
       resetData()
+      resetOperator()
     }
   })
 }
