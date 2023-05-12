@@ -57,6 +57,11 @@ function resetOperator() {
   operator = null
 }
 
+function resetBuffers() {
+  newInputBuffer = []
+  numberBuffer = []
+}
+
 for (const button of buttons) {
   button.addEventListener('click', function() {
     buttonClass = button.classList
@@ -78,12 +83,15 @@ for (const button of buttons) {
       console.log(leftNumber)
       console.log(operator)
       resetData()
-    } else if (buttonClass.contains('equal') && rightNumber == null) {
+    } else if (buttonClass.contains('equal')) {
       rightNumber = number
       console.log(rightNumber)
-      equals = operate(operator, leftNumber, rightNumber)
-      console.log(equals)
+      const equals = operate(operator, leftNumber, rightNumber)
+      console.log(operate(operator, leftNumber, rightNumber))
       display.innerHTML = equals
+      resetBuffers()
+      numberBuffer.push(equals)
+      number = parseFloat(numberBuffer)
     } else if (buttonClass.contains('clear')) {
       resetData()
       resetOperator()
