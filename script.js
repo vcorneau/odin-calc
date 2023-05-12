@@ -29,8 +29,8 @@ function operate(operator, leftNumber, rightNumber) {
     result = mult(leftNumber, rightNumber)
     return result
   } else if(operator === '/' && rightNumber === 0) {
-    let divideByZero = '80085'
-    return dividebyZero;
+    const divideByZero = '80085'
+    return divideByZero
   }
 }
 
