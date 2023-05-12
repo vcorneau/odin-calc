@@ -26,7 +26,7 @@ function operate(operator, leftNumber, rightNumber) {
     result = mult(leftNumber, rightNumber)
     return result
   } else if(operator === '/' && rightNumber !== 0) {
-    result = mult(leftNumber, rightNumber)
+    result = div(leftNumber, rightNumber)
     return result
   } else if(operator === '/' && rightNumber === 0) {
     const divideByZero = '80085'
@@ -80,14 +80,10 @@ for (const button of buttons) {
     } else if (buttonClass.contains('operator')) {
       operator = button.innerHTML
       leftNumber = number
-      console.log(leftNumber)
-      console.log(operator)
       resetData()
     } else if (buttonClass.contains('equal')) {
       rightNumber = number
-      console.log(rightNumber)
       const equals = operate(operator, leftNumber, rightNumber)
-      console.log(operate(operator, leftNumber, rightNumber))
       display.innerHTML = equals
       resetBuffers()
       numberBuffer.push(equals)
@@ -98,4 +94,3 @@ for (const button of buttons) {
     }
   })
 }
-
